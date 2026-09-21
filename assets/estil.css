@@ -1,0 +1,359 @@
+/* Menjador Ca la Rosa — full d'estils */
+
+:root{
+  --nata:#FCF4EC;
+  --nata-2:#F7E8DB;
+  --blanc:#FFFCF9;
+  --tinta:#3B2A2C;
+  --tinta-suau:#6E5A5C;
+  --rosa:#C64C63;
+  --rosa-fosc:#A03D52;
+  --rosa-clar:#F3D6DA;
+  --prunera:#4B2333;
+  --verd:#6E8F4E;
+  --verd-clar:#E4EDD8;
+  --mel:#E9A23B;
+  --mel-clar:#FBEBD0;
+
+  --r-s:12px;
+  --r-m:20px;
+  --r-l:32px;
+  --r-xl:44px;
+
+  --ombra:0 2px 4px rgba(75,35,51,.04), 0 12px 28px -12px rgba(75,35,51,.16);
+  --ombra-alta:0 4px 8px rgba(75,35,51,.05), 0 24px 48px -16px rgba(75,35,51,.22);
+
+  --max:1140px;
+  --gap:clamp(3rem,7vw,5.5rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--nata);
+  color:var(--tinta);
+  font-family:Figtree,"Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:17px;
+  line-height:1.68;
+}
+
+h1,h2,h3{
+  font-family:Fraunces,Georgia,serif;
+  font-weight:600;
+  font-variation-settings:"SOFT" 40,"WONK" 1;
+  line-height:1.12;
+  letter-spacing:-.015em;
+  margin:0 0 .55em;
+  text-wrap:balance;
+}
+h1{font-size:clamp(2.4rem,6.2vw,4.05rem);line-height:1.06}
+h2{font-size:clamp(1.85rem,4.2vw,2.75rem)}
+h3{font-size:clamp(1.22rem,2.4vw,1.5rem)}
+h4{font-family:Figtree,sans-serif;font-weight:700;font-size:1rem;margin:0 0 .7rem}
+
+p{margin:0 0 1.15em;max-width:64ch}
+ul,ol{max-width:64ch}
+img{max-width:100%;height:auto;display:block}
+strong{font-weight:700;color:var(--prunera)}
+
+a{color:var(--rosa-fosc);text-underline-offset:.2em;text-decoration-thickness:1.5px}
+a:hover{color:var(--rosa)}
+
+:focus-visible{outline:3px solid var(--mel);outline-offset:3px;border-radius:6px}
+
+.embolcall{max-width:var(--max);margin-inline:auto;padding-inline:clamp(1.15rem,5vw,2.5rem)}
+
+.salta{position:absolute;left:-9999px;background:var(--mel);color:var(--prunera);
+  padding:.75rem 1.2rem;font-weight:700;border-radius:0 0 var(--r-s) 0}
+.salta:focus{left:0;top:0;z-index:60}
+
+/* ---------- capçalera ---------- */
+
+.capcalera{background:rgba(252,244,236,.94);backdrop-filter:blur(10px);
+  position:sticky;top:0;z-index:30;border-bottom:1px solid var(--nata-2)}
+
+/* La capçalera pot ser més ampla que el text: així el menú i el selector
+   caben en una sola fila sense haver d'encongir la tipografia. */
+.capcalera .embolcall{max-width:1290px}
+
+.capcalera-fila{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem 1.1rem;padding-block:.8rem}
+
+.marca{display:flex;align-items:center;gap:.65rem;text-decoration:none;margin-right:auto}
+.marca img{width:46px;height:46px;border-radius:50%;flex:none}
+.marca b{display:block;font-family:Fraunces,serif;font-weight:600;font-size:1.14rem;
+  line-height:1.15;color:var(--prunera);letter-spacing:-.01em}
+.marca span{display:block;font-size:.7rem;color:var(--tinta-suau);line-height:1.3}
+
+.navegacio ul{list-style:none;margin:0;padding:0;max-width:none;
+  display:flex;flex-wrap:wrap;gap:.3rem .35rem}
+.navegacio a{color:var(--tinta);text-decoration:none;font-size:.9rem;font-weight:500;
+  padding:.35rem .6rem;border-radius:999px;display:block}
+.navegacio a:hover{background:var(--nata-2);color:var(--prunera)}
+.navegacio a[aria-current=page]{background:var(--rosa-clar);color:var(--prunera);font-weight:600}
+
+/* ---------- botons ---------- */
+
+.boto{display:inline-block;font-weight:600;font-size:1.02rem;
+  padding:.85rem 1.7rem;border-radius:999px;text-decoration:none;
+  border:2px solid transparent;transition:transform .15s ease, box-shadow .15s ease}
+.boto-ple{background:var(--rosa);color:#fff;box-shadow:var(--ombra)}
+.boto-ple:hover{background:var(--rosa-fosc);color:#fff;transform:translateY(-2px);box-shadow:var(--ombra-alta)}
+.boto-buit{border-color:var(--rosa);color:var(--rosa-fosc)}
+.boto-buit:hover{background:var(--rosa-clar);color:var(--prunera)}
+.sobre-fosc .boto-buit{border-color:rgba(255,255,255,.55);color:#fff}
+.sobre-fosc .boto-buit:hover{background:rgba(255,255,255,.14);color:#fff;border-color:#fff}
+
+.botonera{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+
+/* ---------- hero ---------- */
+
+.hero{padding-block:clamp(2.8rem,7vw,5rem) 0;overflow:hidden}
+.hero-graella{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:900px){.hero-graella{grid-template-columns:1.06fr .94fr;gap:3.5rem}}
+
+.hero h1{color:var(--prunera)}
+.hero-entrada{font-size:clamp(1.06rem,1.9vw,1.2rem);color:var(--tinta-suau);max-width:46ch}
+
+.segell{display:inline-flex;align-items:center;gap:.5rem;background:var(--verd-clar);
+  color:#3F5B29;font-size:.85rem;font-weight:600;padding:.4rem 1rem;
+  border-radius:999px;margin-bottom:1.3rem}
+.segell::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--verd)}
+
+/* marc de foto: si la imatge encara no hi es, es veu el degradat calid */
+.foto{
+  border-radius:var(--r-xl);
+  background:linear-gradient(150deg,var(--rosa-clar),var(--mel-clar) 55%,var(--verd-clar));
+  background-size:cover;background-position:center;
+  box-shadow:var(--ombra-alta);
+  position:relative;overflow:hidden;
+}
+.foto::after{content:"";display:block;padding-top:78%}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.foto-alta::after{padding-top:118%}
+.foto-ampla::after{padding-top:52%}
+
+.hero .foto{transform:rotate(1.2deg)}
+
+/* ---------- banda de temporada ---------- */
+
+.temporada{margin-top:var(--gap);background:var(--prunera);color:var(--nata);
+  border-radius:var(--r-l);padding:2rem clamp(1.4rem,4vw,2.6rem)}
+.temporada h2{color:#fff;font-size:clamp(1.3rem,2.8vw,1.7rem);margin-bottom:.9rem}
+.temporada ul{list-style:none;margin:0;padding:0;max-width:none;
+  display:flex;flex-wrap:wrap;gap:.55rem}
+.temporada li{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);
+  padding:.4rem 1rem;border-radius:999px;font-size:.97rem}
+.temporada p{color:var(--rosa-clar);font-size:.92rem;margin:1rem 0 0;max-width:56ch}
+
+/* ---------- seccions ---------- */
+
+.seccio{padding-block:var(--gap)}
+.seccio-clara{background:var(--blanc)}
+.seccio-rosa{background:var(--rosa-clar)}
+.seccio-fosca{background:var(--prunera);color:var(--nata)}
+.seccio-fosca h2,.seccio-fosca h3{color:#fff}
+.seccio-fosca p{color:#E8D2D8}
+.seccio-fosca .entradeta p{color:#EBD6DC}
+
+.entradeta{max-width:56ch;margin-bottom:2.8rem}
+.entradeta p{font-size:1.12rem;color:var(--tinta-suau)}
+
+/* targetes de servei */
+.serveis{display:grid;gap:1.4rem}
+@media(min-width:700px){.serveis{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.serveis{grid-template-columns:repeat(3,1fr)}}
+
+.servei{background:var(--blanc);border-radius:var(--r-l);padding:1.9rem 1.7rem;
+  box-shadow:var(--ombra);display:flex;flex-direction:column;
+  border:1px solid rgba(75,35,51,.05)}
+.seccio-clara .servei{background:var(--nata)}
+.servei .icona{width:52px;height:52px;border-radius:var(--r-s);background:var(--mel-clar);
+  display:grid;place-items:center;margin-bottom:1.1rem;font-size:1.6rem}
+.servei:nth-child(2n) .icona{background:var(--verd-clar)}
+.servei:nth-child(3n) .icona{background:var(--rosa-clar)}
+.servei h3{margin-bottom:.45rem}
+.servei h3 a{text-decoration:none;color:var(--prunera)}
+.servei h3 a:hover{color:var(--rosa)}
+.servei p{font-size:.98rem;color:var(--tinta-suau);margin-bottom:1.1rem}
+.servei .mes{margin-top:auto;font-weight:600;font-size:.94rem;text-decoration:none}
+.servei .mes:hover{text-decoration:underline}
+
+/* dues columnes */
+.duo{display:grid;gap:var(--gap) 3.5rem;align-items:start}
+@media(min-width:880px){.duo{grid-template-columns:1.12fr .88fr}}
+.duo-foto{display:grid;gap:2.5rem 3.5rem;align-items:center}
+@media(min-width:880px){.duo-foto{grid-template-columns:1fr 1fr}}
+
+.fitxa{background:var(--nata-2);border-radius:var(--r-l);padding:1.9rem 1.7rem;
+  position:sticky;top:6.5rem}
+.seccio-clara .fitxa{background:var(--nata)}
+.fitxa h3{font-size:1.1rem;margin-bottom:.35rem}
+.fitxa h3+p{margin-bottom:1.3rem}
+.fitxa p:last-child{margin-bottom:0}
+@media(max-width:879px){.fitxa{position:static}}
+
+/* llistes */
+.punts{list-style:none;padding:0;margin:0 0 1.6rem}
+.punts li{padding:.55rem 0 .55rem 2rem;position:relative}
+.punts li::before{content:"";position:absolute;left:0;top:1.02em;width:11px;height:11px;
+  background:var(--verd);border-radius:60% 0 60% 60%;transform:rotate(-10deg)}
+.seccio-fosca .punts li::before{background:var(--mel)}
+
+/* cita */
+.cita{background:var(--mel-clar);border-radius:var(--r-l);padding:clamp(1.8rem,4vw,3rem);margin:0}
+.cita p{font-family:Fraunces,serif;font-size:clamp(1.3rem,3vw,1.85rem);line-height:1.3;
+  color:var(--prunera);margin:0;max-width:26ch;font-variation-settings:"SOFT" 60,"WONK" 1}
+.cita footer{margin-top:1.1rem;font-size:.9rem;color:var(--tinta-suau)}
+
+/* xarxes i proveidors */
+.xips{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.6rem;max-width:none}
+.xips li{background:var(--blanc);border:1px solid var(--nata-2);border-radius:999px;
+  padding:.45rem 1.1rem;font-size:.93rem;font-weight:500}
+.seccio-fosca .xips li{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff}
+
+/* preguntes */
+.faq{margin-top:2.4rem;max-width:72ch;display:grid;gap:.8rem}
+.faq details{background:var(--blanc);border-radius:var(--r-m);padding:1.1rem 1.4rem;
+  box-shadow:var(--ombra)}
+.seccio-clara .faq details{background:var(--nata)}
+.faq summary{cursor:pointer;font-weight:600;font-size:1.03rem;list-style:none;
+  display:flex;justify-content:space-between;gap:1rem;align-items:center;color:var(--prunera)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--rosa);font-size:1.5rem;line-height:1;flex:none}
+.faq details[open] summary::after{content:"\2013"}
+.faq details p{margin:.9rem 0 .2rem;font-size:.98rem;color:var(--tinta-suau)}
+
+/* dades */
+.dades{list-style:none;padding:0;margin:0}
+.dades li{margin-bottom:1.15rem}
+.dades strong{display:block;font-size:.82rem;color:var(--tinta-suau);font-weight:600;margin-bottom:.1rem}
+.dades a{font-size:1.1rem;font-weight:600}
+
+/* crida final */
+.crida{background:#B04357;color:#fff;padding-block:var(--gap)}
+.crida h2{color:#fff;max-width:16ch}
+.crida p{color:#FDEFF2;max-width:48ch;font-size:1.08rem}
+.crida .boto-ple{background:#fff;color:#93384B}
+.crida .boto-ple:hover{background:var(--prunera);color:#fff}
+
+/* ---------- peu ---------- */
+
+.peu{background:var(--prunera);color:#D9C2C9;padding-block:3.5rem 2rem;font-size:.94rem}
+.peu a{color:var(--nata);text-decoration:none}
+.peu a:hover{text-decoration:underline;color:#fff}
+.peu-titol{color:#fff;font-weight:700;font-size:1rem;margin:0 0 .7rem;
+  font-family:Figtree,sans-serif}
+.peu ul{list-style:none;padding:0;margin:0}
+.peu li{margin-bottom:.45rem}
+.peu-graella{display:grid;gap:2.2rem;margin-bottom:2.6rem}
+@media(min-width:760px){.peu-graella{grid-template-columns:1.5fr 1fr 1fr}}
+.peu-llegal{border-top:1px solid rgba(255,255,255,.14);padding-top:1.5rem;
+  font-size:.84rem;color:#BCA2AA}
+.peu-llegal p{max-width:none;margin:0 0 .35rem}
+
+/* molla de pa */
+.molla{font-size:.87rem;margin-bottom:1.1rem;color:var(--tinta-suau)}
+.molla ol{list-style:none;display:flex;flex-wrap:wrap;gap:.45rem;margin:0;padding:0;max-width:none}
+.molla li:not(:last-child)::after{content:"\203A";margin-left:.45rem;color:var(--rosa)}
+
+@media(max-width:759px){
+  .capcalera{position:static}
+  .marca img{width:40px;height:40px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .hero .foto{transform:none}
+}
+
+/* ---------- article del blog ---------- */
+.article{max-width:760px}
+.article h1{margin-bottom:1.2rem}
+.article-cos h2{font-size:clamp(1.35rem,3vw,1.8rem);margin-top:2.4rem}
+.article-cos p{font-size:1.06rem}
+.article-cos p:first-child{font-size:1.14rem;color:var(--tinta-suau)}
+.data{font-size:.88rem;color:var(--tinta-suau);font-weight:600;margin:0 0 .35rem}
+.servei .data{margin-bottom:.5rem}
+
+/* ---------- selector d'idioma ---------- */
+
+/* Control segmentat a la capçalera: CA · ES · EN.
+   Amb només tres idiomes, un desplegable seria més feina per a l'usuari
+   que tres botons sempre visibles. */
+.idiomes ul{
+  display:flex;align-items:center;
+  list-style:none;margin:0;padding:3px;gap:2px;max-width:none;
+  background:var(--nata-2);border-radius:999px;
+}
+.idiomes a,.idiomes span{
+  display:block;padding:.32rem .7rem;border-radius:999px;
+  font-size:.78rem;font-weight:700;letter-spacing:.04em;
+  text-decoration:none;color:var(--tinta-suau);line-height:1.35;
+  transition:background .15s ease,color .15s ease;
+}
+.idiomes i{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.idiomes a:hover{background:var(--blanc);color:var(--prunera)}
+.idiomes [aria-current]{background:var(--rosa);color:#fff;cursor:default}
+
+/* El nom sencer viu dins <i>, ocult a la vista i disponible per a lectors
+   de pantalla. A la capçalera sempre es veu només el codi, que és el que
+   permet que el selector càpiga en una sola línia. El peu els mostra sencers. */
+
+/* En mòbil el selector puja a la primera fila, al costat del logo,
+   i el menú passa sencer a la segona */
+/* Quan el menú i el selector no caben en una fila, el selector es queda
+   a dalt a la dreta i el menú passa sencer a la segona fila. */
+@media(max-width:1060px){
+  .navegacio{order:1;flex-basis:100%}
+}
+@media(max-width:900px){
+  .marca span span{display:none}
+}
+
+/* Versió ampliada al peu, amb els noms complets */
+.idiomes-peu{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem;
+  margin-bottom:1.2rem;
+}
+.idiomes-peu>span{font-weight:600;color:#fff;font-size:.84rem}
+.idiomes-peu ul{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0;padding:0}
+.idiomes-peu li a,.idiomes-peu li span{
+  display:block;padding:.3rem .9rem;border-radius:999px;font-size:.84rem;
+  text-decoration:none;border:1px solid rgba(255,255,255,.22);color:#D9C2C9;
+}
+.idiomes-peu li a:hover{background:rgba(255,255,255,.12);color:#fff;text-decoration:none}
+.idiomes-peu li [aria-current]{background:var(--rosa);border-color:var(--rosa);color:#fff}
+
+/* En pantalles molt estretes el selector s'encongeix una mica perquè
+   càpiga al costat del logo i no es mengi una fila sencera. */
+@media(max-width:480px){
+  .idiomes a,.idiomes span{padding:.28rem .55rem;font-size:.74rem}
+  .marca b{font-size:1.05rem}
+}
+
+/* ---------- formulari de contacte ---------- */
+
+.formulari{max-width:760px}
+.formulari .camps{display:grid;gap:0 1.4rem}
+@media(min-width:640px){.formulari .camps{grid-template-columns:1fr 1fr}}
+.formulari p{margin:0 0 1.1rem;max-width:none}
+.formulari label{display:block;font-weight:600;font-size:.92rem;margin-bottom:.32rem;
+  color:var(--prunera)}
+.formulari input,.formulari select,.formulari textarea{
+  width:100%;font:inherit;font-size:1rem;color:var(--tinta);
+  background:var(--nata);border:1.5px solid #A68268;border-radius:var(--r-s);
+  padding:.7rem .9rem;transition:border-color .15s ease,background .15s ease}
+.formulari textarea{resize:vertical;min-height:7em}
+.formulari input:hover,.formulari select:hover,.formulari textarea:hover{border-color:#8A6A52}
+.formulari input:focus,.formulari select:focus,.formulari textarea:focus{
+  border-color:var(--rosa);background:#fff;outline:none;
+  box-shadow:0 0 0 3px rgba(201,85,107,.16)}
+.formulari ::placeholder{color:#806A6B;opacity:1}
+.formulari button{cursor:pointer;font-family:inherit}
+.nota-rgpd{font-size:.86rem;color:var(--tinta-suau);max-width:56ch}
+.amagat{position:absolute;left:-9999px}
+
+/* quatre projectes: graella de dos per dos, que queda més equilibrada que 3+1 */
+@media(min-width:1000px){.serveis-2{grid-template-columns:repeat(2,1fr)}}
