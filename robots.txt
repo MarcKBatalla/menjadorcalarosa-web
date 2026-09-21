@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Cap bloqueig. HTML estatic, sense redireccions ni JavaScript.
+# Sin bloqueos. HTML estatico, sin redirecciones ni JavaScript.
+# No blocking. Static HTML, no redirects, no JavaScript.
+
+Sitemap: https://menjadorcalarosa.cat/sitemap.xml
