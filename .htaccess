@@ -1,0 +1,104 @@
+# Menjador Ca la Rosa — configuracio Apache
+# Cap redireccio que impedeixi la indexacio + recuperacio de les URLs antigues.
+
+Options -Indexes
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # --- Una sola versio del lloc: HTTPS i sense www ---
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://menjadorcalarosa.cat/$1 [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^www\.menjadorcalarosa\.cat$ [NC]
+  RewriteRule ^(.*)$ https://menjadorcalarosa.cat/$1 [R=301,L]
+
+  # --- Blog historic de Blogger: qualsevol URL cap a l'arxiu ---
+  RewriteRule ^[0-9]{4}/[0-9]{2}/(.*)\.html$ /blog.html [R=301,L]
+  RewriteRule ^[0-9]{4}_[0-9]{2}_[0-9]{2}_archive\.html$ /blog.html [R=301,L]
+  RewriteRule ^search/label/.*$ /blog.html [R=301,L]
+</IfModule>
+
+# ============================================================
+#  301 des de les URLs antigues de WordPress
+#  Cada una apunta ara a una pagina real, no a un substitut.
+# ============================================================
+
+# Pagines de servei
+# la pagina catalana de catering ha canviat de nom
+Redirect 301 /catering-ecologic-barcelona.html https://menjadorcalarosa.cat/catering-sostenible-barcelona.html
+Redirect 301 /catering/ https://menjadorcalarosa.cat/catering-sostenible-barcelona.html
+Redirect 301 /catering-2/ https://menjadorcalarosa.cat/catering-sostenible-barcelona.html
+Redirect 301 /menjador-infantil/ https://menjadorcalarosa.cat/menjador-infantil.html
+Redirect 301 /casals/ https://menjadorcalarosa.cat/
+Redirect 301 /tallers/ https://menjadorcalarosa.cat/tallers-de-cuina.html
+
+# Mercat de Pages i Carmanyola: orfes, sense enllac des d'enlloc del lloc
+# (tampoc no han estat mai al menu principal). Cap a la portada.
+Redirect 301 /mercat-de-pages/ https://menjadorcalarosa.cat/
+Redirect 301 /mercat/ https://menjadorcalarosa.cat/
+# la Floristeria ja no existeix com a pagina (la fitxa antiga tenia dades
+# incorrectes); "Antic" parla d'un negoci diferent, aixi que no la fem servir
+# de substitut. La pagina ha desaparegut de debo: cap a la portada.
+Redirect 301 /la-floristeria/ https://menjadorcalarosa.cat/
+Redirect 301 /floristeria/ https://menjadorcalarosa.cat/
+Redirect 301 /carmanyola/ https://menjadorcalarosa.cat/
+Redirect 301 /servei-carmanyola/ https://menjadorcalarosa.cat/
+Redirect 301 /per-emportar/ https://menjadorcalarosa.cat/
+
+# Menus i cistella
+# Casals i Cistelles han desaparegut del menu (la pagina encara existeix,
+# pero orfe, sense enllac): cap a la portada en comptes d'una pagina que
+# ningu no pot trobar navegant.
+Redirect 301 /menu/ https://menjadorcalarosa.cat/menjador-infantil.html
+Redirect 301 /p/menu.html https://menjadorcalarosa.cat/menjador-infantil.html
+Redirect 301 /menu-gent-gran/ https://menjadorcalarosa.cat/
+Redirect 301 /menu-jove/ https://menjadorcalarosa.cat/
+Redirect 301 /cistella-ecologica/ https://menjadorcalarosa.cat/
+Redirect 301 /p/cistella-ecologica.html https://menjadorcalarosa.cat/
+Redirect 301 /botiga/ https://menjadorcalarosa.cat/
+Redirect 301 /p/servei-cursos.html https://menjadorcalarosa.cat/tallers-de-cuina.html
+
+# Institucional
+Redirect 301 /nosaltres/ https://menjadorcalarosa.cat/qui-som.html
+Redirect 301 /projectes/ https://menjadorcalarosa.cat/qui-som.html
+Redirect 301 /premsa/ https://menjadorcalarosa.cat/qui-som.html
+Redirect 301 /contacta-amb-nosaltres/ https://menjadorcalarosa.cat/contacte.html
+Redirect 301 /contacta/ https://menjadorcalarosa.cat/contacte.html
+
+# Categories antigues del blog
+Redirect 301 /category/casal/ https://menjadorcalarosa.cat/
+Redirect 301 /category/menjador/ https://menjadorcalarosa.cat/menjador-infantil.html
+Redirect 301 /category/catering/ https://menjadorcalarosa.cat/catering-sostenible-barcelona.html
+Redirect 301 /category/projecte/ https://menjadorcalarosa.cat/qui-som.html
+Redirect 301 /category/taller/ https://menjadorcalarosa.cat/tallers-de-cuina.html
+Redirect 301 /category/cistella/ https://menjadorcalarosa.cat/
+Redirect 301 /blog/index.html https://menjadorcalarosa.cat/blog.html
+Redirect 301 /es/blog/ https://menjadorcalarosa.cat/es/blog.html
+Redirect 301 /en/blog/ https://menjadorcalarosa.cat/en/blog.html
+
+# --- Compressio ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>
+
+# --- Cau ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# --- Capcaleres ---
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  # Important: cap noindex. Si l'entorn n'afegeix un, aqui es neteja.
+  Header unset X-Robots-Tag
+</IfModule>
+
+ErrorDocument 404 /index.html
