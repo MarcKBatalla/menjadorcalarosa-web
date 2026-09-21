@@ -92,36 +92,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://menjadorcalarosa.cat/casals-i-activitats.html</loc>
-    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/casals-i-activitats.html"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/casales-y-actividades.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/holiday-camps.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/casals-i-activitats.html"/>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://menjadorcalarosa.cat/es/casales-y-actividades.html</loc>
-    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/casals-i-activitats.html"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/casales-y-actividades.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/holiday-camps.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/casals-i-activitats.html"/>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://menjadorcalarosa.cat/en/holiday-camps.html</loc>
-    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/casals-i-activitats.html"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/casales-y-actividades.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/holiday-camps.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/casals-i-activitats.html"/>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://menjadorcalarosa.cat/tallers-de-cuina.html</loc>
     <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/tallers-de-cuina.html"/>
     <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/talleres-de-cocina.html"/>
@@ -147,36 +117,6 @@
     <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/talleres-de-cocina.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/cooking-workshops.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/tallers-de-cuina.html"/>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://menjadorcalarosa.cat/cistelles-ecologiques.html</loc>
-    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/cistelles-ecologiques.html"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/cestas-ecologicas.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/veg-boxes-and-meals.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/cistelles-ecologiques.html"/>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://menjadorcalarosa.cat/es/cestas-ecologicas.html</loc>
-    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/cistelles-ecologiques.html"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/cestas-ecologicas.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/veg-boxes-and-meals.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/cistelles-ecologiques.html"/>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://menjadorcalarosa.cat/en/veg-boxes-and-meals.html</loc>
-    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/cistelles-ecologiques.html"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/cestas-ecologicas.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/veg-boxes-and-meals.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/cistelles-ecologiques.html"/>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -300,66 +240,6 @@
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://menjadorcalarosa.cat/mercat-de-pages.html</loc>
-    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/mercat-de-pages.html"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/mercado-de-payes.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/farmers-market.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/mercat-de-pages.html"/>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://menjadorcalarosa.cat/es/mercado-de-payes.html</loc>
-    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/mercat-de-pages.html"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/mercado-de-payes.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/farmers-market.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/mercat-de-pages.html"/>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://menjadorcalarosa.cat/en/farmers-market.html</loc>
-    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/mercat-de-pages.html"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/mercado-de-payes.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/farmers-market.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/mercat-de-pages.html"/>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://menjadorcalarosa.cat/menjar-per-emportar.html</loc>
-    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/menjar-per-emportar.html"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/comida-para-llevar.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/food-to-go.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/menjar-per-emportar.html"/>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://menjadorcalarosa.cat/es/comida-para-llevar.html</loc>
-    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/menjar-per-emportar.html"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/comida-para-llevar.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/food-to-go.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/menjar-per-emportar.html"/>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://menjadorcalarosa.cat/en/food-to-go.html</loc>
-    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://menjadorcalarosa.cat/menjar-per-emportar.html"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://menjadorcalarosa.cat/es/comida-para-llevar.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menjadorcalarosa.cat/en/food-to-go.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://menjadorcalarosa.cat/menjar-per-emportar.html"/>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://menjadorcalarosa.cat/blog.html</loc>
