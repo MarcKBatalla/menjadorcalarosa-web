@@ -67,3 +67,12 @@
 /2017/*              /blog.html   301
 /2018/*              /blog.html   301
 /search/label/*       /blog.html   301
+
+# NOTA: no hi ha comodi final aqui. La documentacio oficial de Cloudflare
+# Pages diu explicitament: "Redirects are always followed, regardless of
+# whether or not an asset matches the incoming request." Aixo vol dir que
+# un /* al final NO nomes actua de reserva: intercepta TOTES les peticions,
+# incloses les 93 pagines reals del lloc, i les enviaria totes cap aqui.
+# La solucio segura per a les URLs velles no mapejades es una pagina
+# 404.html personalitzada (vegeu aquest mateix directori), no una
+# redireccio comodi.
