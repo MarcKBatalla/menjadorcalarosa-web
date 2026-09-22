@@ -101,4 +101,14 @@ Redirect 301 /en/blog/ https://menjadorcalarosa.cat/en/blog.html
   Header unset X-Robots-Tag
 </IfModule>
 
+# --- Qualsevol altra URL antiga de WordPress que no hem mapejat una per una
+#    (hi havia mes de 100 entrades al blog original): en lloc d'un 404 sec,
+#    cap a l'arxiu del blog. Ha d'anar despres de tots els Redirect 301
+#    anteriors, que son mes especifics i tenen prioritat.
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ https://menjadorcalarosa.cat/blog.html [R=301,L]
+</IfModule>
+
 ErrorDocument 404 /index.html
