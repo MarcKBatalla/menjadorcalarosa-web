@@ -1,78 +1,103 @@
 # Redireccions per a Cloudflare Pages.
-# Cloudflare no llegeix .htaccess (aixo es nomes per a servidors Apache).
-# Aquest fitxer fa la mateixa feina amb la sintaxi propia de Cloudflare Pages:
+# Cloudflare no llegeix .htaccess: nomes aquest fitxer.
 #   /origen  /desti  301
 #
-# Cloudflare detecta aquest fitxer automaticament si es diu "_redirects"
-# i es troba a l'arrel del lloc publicat (al costat de index.html).
+# IMPORTANT (revisat 2026-09-24):
+# 1. Cloudflare Pages ja redirigeix sol /pagina.html -> /pagina (308).
+#    Per aixo TOTS els destins van SENSE .html. Un desti amb .html
+#    obligaria Google a fer dos salts.
+# 2. No hi posem mai una regla l'origen de la qual sigui una pagina real
+#    amb barra final (p. ex. /menjador-infantil/). Cloudflare pot tractar
+#    /x/ i /x com la mateixa ruta, i aleshores la regla redirigeix la
+#    pagina real (o crea un bucle). Per aixo s'han tret les regles
+#    /menjador-infantil/, /mercat-de-pages/, /es/blog/ i /en/blog/.
+# 3. Les query strings (?p=500) no compten per fer coincidir la regla:
+#    /ords/* ja cobreix /ords/f?p=500.
+# 4. Els redireccionaments www -> sense www i http -> https NO es poden
+#    fer aqui. Es fan al tauler de Cloudflare (vegeu LLEGEIX-ME.md).
+# 5. Mai un comodi final /* : Cloudflare el segueix encara que la pagina
+#    existeixi i ho enviaria tot al mateix lloc. Les URLs velles no
+#    mapejades cauen a 404.html.
+
+# --- Web antiga d'Oracle APEX / ORDS ---
+/ords        /   301
+/ords/*      /   301
+/apex        /   301
+/apex/*      /   301
+
+# --- Portada antiga de WordPress ---
+/home        /   301
+/home/       /   301
+/inici/      /   301
 
 # --- Pagines de servei ---
-/catering-ecologic-barcelona.html   /catering-sostenible-barcelona.html   301
-/catering/                          /catering-sostenible-barcelona.html   301
-/catering-2/                        /catering-sostenible-barcelona.html   301
-/menjador-infantil/                 /menjador-infantil.html               301
-/casals/                            /                                      301
-/tallers/                           /tallers-de-cuina.html                301
+/catering-ecologic-barcelona.html   /catering-sostenible-barcelona   301
+/catering-ecologic-barcelona        /catering-sostenible-barcelona   301
+/catering/                          /catering-sostenible-barcelona   301
+/catering-2/                        /catering-sostenible-barcelona   301
+/casals/                            /casals-i-activitats             301
+/tallers/                           /tallers-de-cuina                301
 
-# --- Mercat de Pages i Carmanyola: orfes, mai al menu principal ---
-/mercat-de-pages/     /   301
-/mercat/              /   301
-# la Floristeria ja no existeix com a pagina (la fitxa antiga tenia dades
-# incorrectes); "Antic" parla d'un negoci diferent, aixi que no la fem servir
-# de substitut. La pagina ha desaparegut de debo: cap a la portada.
+# --- Mercat de Pages ---
+/mercat/                            /mercat-de-pages   301
+/mercat-de-pages-primera-edicio/    /mercat-de-pages   301
+/mercat-de-pages-la-                /mercat-de-pages   301
+/agora-pagesa/                      /mercat-de-pages   301
+
+# --- Menjar per emportar i Carmanyola ---
+/carmanyola/          /menjar-per-emportar   301
+/servei-carmanyola/   /menjar-per-emportar   301
+/per-emportar/        /menjar-per-emportar   301
+
+# --- Floristeria: ja no existeix -> portada ---
 /la-floristeria/      /   301
-/floristeria/          /   301
-/carmanyola/          /   301
-/servei-carmanyola/   /   301
-/per-emportar/        /   301
+/floristeria/         /   301
 
 # --- Menus i cistella ---
-# Casals i Cistelles han desaparegut del menu (la pagina encara existeix,
-# pero orfe, sense enllac): cap a la portada en comptes d'una pagina que
-# ningu no pot trobar navegant.
-/menu/                          /menjador-infantil.html       301
-/p/menu.html                    /menjador-infantil.html       301
-/menu-gent-gran/                /   301
-/menu-jove/                     /   301
-/cistella-ecologica/            /   301
-/p/cistella-ecologica.html      /   301
-/botiga/                        /   301
-/p/servei-cursos.html           /tallers-de-cuina.html        301
+/menu/                          /menjador-infantil       301
+/p/menu.html                    /menjador-infantil       301
+/menu-gent-gran/                /cistelles-ecologiques   301
+/menu-jove/                     /cistelles-ecologiques   301
+/cistella-ecologica/            /cistelles-ecologiques   301
+/p/cistella-ecologica.html      /cistelles-ecologiques   301
+/botiga/                        /                        301
+/p/servei-cursos.html           /tallers-de-cuina        301
 
 # --- Institucional ---
-/nosaltres/                   /qui-som.html    301
-/projectes/                   /qui-som.html    301
-/premsa/                      /qui-som.html    301
-/contacta-amb-nosaltres/      /contacte.html   301
-/contacta/                    /contacte.html   301
+/nosaltres/                   /qui-som    301
+/projectes/                   /qui-som    301
+/premsa/                      /qui-som    301
+/contacta-amb-nosaltres/      /contacte   301
+/contacta/                    /contacte   301
+
+# --- Entrades antigues de WordPress detectades a Search Console ---
+/sobirania-alimentaria-per-rosa/                    /qui-som   301
+/volem-impactes-positius-als-nostres-restaurants/   /qui-som   301
+/calendari-dadvent-2022/                            /blog      301
+/goteo-en-maxa/                                     /qui-som   301
+/passeu-un-bon-estiu/                               /blog      301
+/i-finalment-bumerang-el-bowl-que-torna/            /blog      301
 
 # --- Categories antigues del blog de WordPress ---
-/category/casal/       /   301
-/category/menjador/    /menjador-infantil.html                301
-/category/catering/    /catering-sostenible-barcelona.html    301
-/category/projecte/    /qui-som.html                          301
-/category/taller/      /tallers-de-cuina.html                 301
-/category/cistella/    /   301
-/blog/index.html       /blog.html      301
-/es/blog/              /es/blog.html   301
-/en/blog/              /en/blog.html   301
+/category/casal/       /casals-i-activitats             301
+/category/menjador/    /menjador-infantil               301
+/category/catering/    /catering-sostenible-barcelona   301
+/category/projecte/    /qui-som                         301
+/category/taller/      /tallers-de-cuina                301
+/category/cistella/    /cistelles-ecologiques           301
+/category/*            /blog                            301
+/blog/index.html       /blog                            301
 
-# --- Blog historic de Blogger: qualsevol URL antiga cap a l'arxiu nou ---
-# _redirects no admet expressions regulars, aixi que cobrim els anys amb
-# comodins (*). Si en el futur es detecta trafic real a una URL concreta
-# de Blogger que no quedi coberta aqui, afegiu-la com a linia solta.
-/2014/*              /blog.html   301
-/2015/*              /blog.html   301
-/2016/*              /blog.html   301
-/2017/*              /blog.html   301
-/2018/*              /blog.html   301
-/search/label/*       /blog.html   301
+# --- Fitxers i sistema de WordPress ---
+/wp-content/*    /   301
+/wp-admin/*      /   301
+/wp-login.php    /   301
+/feed/*          /blog   301
 
-# NOTA: no hi ha comodi final aqui. La documentacio oficial de Cloudflare
-# Pages diu explicitament: "Redirects are always followed, regardless of
-# whether or not an asset matches the incoming request." Aixo vol dir que
-# un /* al final NO nomes actua de reserva: intercepta TOTES les peticions,
-# incloses les 93 pagines reals del lloc, i les enviaria totes cap aqui.
-# La solucio segura per a les URLs velles no mapejades es una pagina
-# 404.html personalitzada (vegeu aquest mateix directori), no una
-# redireccio comodi.
+# --- Blog historic de Blogger ---
+/2014/*           /blog   301
+/2015/*           /blog   301
+/2016/*           /blog   301
+/2017/*           /blog   301
+/2018/*           /blog   301
+/search/label/*   /blog   301

@@ -116,3 +116,18 @@ cada mes o dos. És contingut fresc que Google nota i, sobretot, és honest amb
 el que hi ha realment a la cuina. Està al principi de `index.html`, dins de
 `<section class="temporada">`. Canviar la llista de fruites i verdures és
 l'única tasca recurrent que necessita aquesta web.
+
+## Cloudflare Pages i URLs (actualitzat 2026-09-24)
+
+- Cloudflare Pages redirigeix sol `/pagina.html` → `/pagina`. Per això el canonical,
+  els `hreflang`, `og:url`, les dades estructurades, el `sitemap.xml` i tots els enllaços
+  interns fan servir URLs **sense .html**. Si s'afegeix una pàgina nova, cal seguir el mateix
+  criteri: si el canonical porta `.html`, Google no la indexa.
+- `.htaccess` no s'utilitza a Cloudflare. Les redireccions són a `_redirects`.
+- Al tauler de Cloudflare (no es pot fer amb `_redirects`):
+  1. SSL/TLS → Edge Certificates → **Always Use HTTPS**: activat.
+  2. Rules → Redirect Rules → nova regla: *Hostname equals* `www.menjadorcalarosa.cat` →
+     Dynamic, `concat("https://menjadorcalarosa.cat", http.request.uri.path)`, 301,
+     *Preserve query string* activat.
+- No deixeu a la carpeta publicada còpies de fitxers (`_redirects - copia`, etc.) ni carpetes
+  de treball: Cloudflare les publica.

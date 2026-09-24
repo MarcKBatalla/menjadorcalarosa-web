@@ -72,3 +72,14 @@ MOTOR = "netlify"
 
 i torneu a generar. Els missatges queden al panell de Netlify i us els
 reenvia al correu que hi configureu, sense activació ni tercers.
+
+## Enllaços sense .html (actualitzat 2026-09-24)
+
+Els enllaços interns ara apunten a URLs netes (`/contacte`, no `/contacte.html`),
+igual que les serveix Cloudflare Pages. `python3 -m http.server` no sap trobar
+`contacte.html` a partir de `/contacte`, així que en local aquests enllaços donaran 404.
+Per provar-ho igual que a Cloudflare:
+
+```
+npx wrangler pages dev .
+```
