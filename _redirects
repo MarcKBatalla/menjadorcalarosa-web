@@ -30,24 +30,50 @@
 /home/       /   301
 /inici/      /   301
 
+# --- Serveis que ja no existeixen (retirats 2026-10-12) -> pagina Antic de cada idioma ---
+/casals-i-activitats        /antic   301
+/casals-i-activitats.html   /antic   301
+/cistelles-ecologiques        /antic   301
+/cistelles-ecologiques.html   /antic   301
+/menjar-per-emportar        /antic   301
+/menjar-per-emportar.html   /antic   301
+/mercat-de-pages        /antic   301
+/mercat-de-pages.html   /antic   301
+/es/casales-y-actividades        /es/antiguo   301
+/es/casales-y-actividades.html   /es/antiguo   301
+/es/cestas-ecologicas        /es/antiguo   301
+/es/cestas-ecologicas.html   /es/antiguo   301
+/es/comida-para-llevar        /es/antiguo   301
+/es/comida-para-llevar.html   /es/antiguo   301
+/es/mercado-de-payes        /es/antiguo   301
+/es/mercado-de-payes.html   /es/antiguo   301
+/en/holiday-camps        /en/past-projects   301
+/en/holiday-camps.html   /en/past-projects   301
+/en/veg-boxes-and-meals        /en/past-projects   301
+/en/veg-boxes-and-meals.html   /en/past-projects   301
+/en/food-to-go        /en/past-projects   301
+/en/food-to-go.html   /en/past-projects   301
+/en/farmers-market        /en/past-projects   301
+/en/farmers-market.html   /en/past-projects   301
+
 # --- Pagines de servei ---
 /catering-ecologic-barcelona.html   /catering-sostenible-barcelona   301
 /catering-ecologic-barcelona        /catering-sostenible-barcelona   301
 /catering/                          /catering-sostenible-barcelona   301
 /catering-2/                        /catering-sostenible-barcelona   301
-/casals/                            /casals-i-activitats             301
+/casals/                            /antic             301
 /tallers/                           /tallers-de-cuina                301
 
 # --- Mercat de Pages ---
-/mercat/                            /mercat-de-pages   301
-/mercat-de-pages-primera-edicio/    /mercat-de-pages   301
-/mercat-de-pages-la-                /mercat-de-pages   301
-/agora-pagesa/                      /mercat-de-pages   301
+/mercat/                            /antic   301
+/mercat-de-pages-primera-edicio/    /antic   301
+/mercat-de-pages-la-                /antic   301
+/agora-pagesa/                      /antic   301
 
 # --- Menjar per emportar i Carmanyola ---
-/carmanyola/          /menjar-per-emportar   301
-/servei-carmanyola/   /menjar-per-emportar   301
-/per-emportar/        /menjar-per-emportar   301
+/carmanyola/          /antic   301
+/servei-carmanyola/   /antic   301
+/per-emportar/        /antic   301
 
 # --- Floristeria: ja no existeix -> portada ---
 /la-floristeria/      /   301
@@ -56,10 +82,10 @@
 # --- Menus i cistella ---
 /menu/                          /menjador-infantil       301
 /p/menu.html                    /menjador-infantil       301
-/menu-gent-gran/                /cistelles-ecologiques   301
-/menu-jove/                     /cistelles-ecologiques   301
-/cistella-ecologica/            /cistelles-ecologiques   301
-/p/cistella-ecologica.html      /cistelles-ecologiques   301
+/menu-gent-gran/                /antic   301
+/menu-jove/                     /antic   301
+/cistella-ecologica/            /antic   301
+/p/cistella-ecologica.html      /antic   301
 /botiga/                        /                        301
 /p/servei-cursos.html           /tallers-de-cuina        301
 
@@ -79,12 +105,12 @@
 /i-finalment-bumerang-el-bowl-que-torna/            /blog      301
 
 # --- Categories antigues del blog de WordPress ---
-/category/casal/       /casals-i-activitats             301
+/category/casal/       /antic             301
 /category/menjador/    /menjador-infantil               301
 /category/catering/    /catering-sostenible-barcelona   301
 /category/projecte/    /qui-som                         301
 /category/taller/      /tallers-de-cuina                301
-/category/cistella/    /cistelles-ecologiques           301
+/category/cistella/    /antic           301
 /category/*            /blog                            301
 /blog/index.html       /blog                            301
 
